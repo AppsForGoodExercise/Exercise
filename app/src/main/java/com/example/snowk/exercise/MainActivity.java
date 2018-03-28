@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void calculateSum(View v)
+    public void calculatesum(View v)
     {
 
     }
