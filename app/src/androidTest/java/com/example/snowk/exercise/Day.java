@@ -12,7 +12,7 @@ public class Day {
     public int size = events.size();
 
     public Day( String[] titlesoe, int[] starttimes, int[] stoptimes) {
-        
+
         events = new ArrayList<Event>();
         if(titlesoe.length==starttimes.length) {
             for(int p = 0;p<stoptimes.length;p++)
