@@ -86,5 +86,23 @@ public class Day {
        events.add(addevent);
     }
 
+    public boolean eventat(int starttime, int stoptime) {
+        boolean checker=false;
+        for(int i = 0;i<=events.size();i++){
+        if(events.get(i).getstarttime()>=starttime||events.get(i).gettimeofeventstop()<=stoptime) {
+             checker=true;
+             break;
+
+        }
+        else if(events.get(i).gettimeofeventstop()<=stoptime&&events.get(i).gettimeofeventstop()>=starttime) {
+                checker=true;
+                break;
+
+            }
+        else checker = false;}
+
+        return checker;
+
+    }
 
 }
