@@ -12,8 +12,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void calendarClass(View v) {
+    public void classclass(View v) {
     }
-    
+
+    public void classclass2(View v) {
+    }
+
 }
 
