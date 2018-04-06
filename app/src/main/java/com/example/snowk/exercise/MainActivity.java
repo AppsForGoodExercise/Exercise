@@ -1,16 +1,14 @@
 package com.example.snowk.exercise;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import com.example.snowk.exercise.Exercise;
 
-import org.omg.CORBA.portable.InputStream;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
