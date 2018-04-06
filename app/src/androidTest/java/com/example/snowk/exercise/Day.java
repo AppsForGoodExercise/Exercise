@@ -105,4 +105,19 @@ public class Day {
 
     }
 
+    /**
+     * Created by robertclark on 4/4/18.
+     */
+
+    public static class Exercise {
+
+
+
+        public Exercise(String title, String intensity, int calories){
+
+
+                //Read the data from the file
+
+        }
+    }
 }
