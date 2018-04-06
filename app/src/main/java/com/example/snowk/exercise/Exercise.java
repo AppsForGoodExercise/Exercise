@@ -10,6 +10,7 @@ public class Exercise {
     int numberoftimes;
     int amountoftime;
     int caloric;
+
     public Exercise(String name, String intensity, int reps, int time, int calories){
         title = name;
         difficulty = intensity;
