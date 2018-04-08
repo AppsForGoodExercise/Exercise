@@ -6,4 +6,5 @@
     <string name="scoreSTR">Today\'s Score</string>
     <string name="profileSTR">profile</string>
     <string name="recordsSTR">My Records</string>
+    <string name="NotiSTR">notification</string>
 </resources>

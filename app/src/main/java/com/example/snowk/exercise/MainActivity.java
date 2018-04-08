@@ -1,23 +1,52 @@
 package com.example.snowk.exercise;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.graphics.BitmapFactory;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import com.example.snowk.exercise.Exercise;
+import android.widget.Button;
 
-import org.omg.CORBA.portable.InputStream;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //notification code
+        button = (Button) findViewById (R.id.notiButton);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view){
+                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(MainActivity.this)
+                        .setSmallIcon(android.R.drawable.stat_notify_error)
+                        .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
+                        .setContentTitle("ExerTime")
+                        .setContentText("Time to exercise...");
+                notificationBuilder.setDefaults(
+                        Notification.DEFAULT_SOUND |
+                        Notification.DEFAULT_LIGHTS |
+                        Notification.DEFAULT_VIBRATE );
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
+                notificationManager.notify(1, notificationBuilder.build());
+            }
+        });
+
+
         InputStream is = (InputStream) getResources().openRawResource(R.raw.exerciselist);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
@@ -34,10 +63,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void classclass(View v) {
+    public void classclass (View v) {
+
     }
 
     public void classclass2(View v) {
+
     }
 
 }
