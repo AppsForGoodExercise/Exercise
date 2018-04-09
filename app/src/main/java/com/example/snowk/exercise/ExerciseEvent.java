@@ -2,16 +2,18 @@ package com.example.snowk.exercise;
 
 import android.util.Log;
 
+
 /**
  * Created by robertclark on 4/3/18.
  */
 
 public class ExerciseEvent {
 
-   private String titleofexercise;
+    private String titleofexercise;
    private int timeofexercisestart;
-   private  int timeofexercisestop;
-   private Exercise Eventexercise;
+    private int timeofexercisestop;
+    Exercise Eventexercise;
+
     public ExerciseEvent(Exercise e, int timestart, int timestop){
          Eventexercise = e;
         timeofexercisestart = timestart;

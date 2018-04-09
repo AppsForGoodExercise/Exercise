@@ -7,9 +7,9 @@ package com.example.snowk.exercise;
 public class Exercise {
     String title;
     String difficulty;
-    int numberoftimes;
-    int amountoftime;
-    int caloric;
+    private int numberoftimes;
+    private  int amountoftime;
+    private int caloric;
 
     public Exercise(String name, String intensity, int reps, int time, int calories){
         title = name;

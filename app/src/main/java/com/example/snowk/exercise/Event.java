@@ -5,9 +5,9 @@ package com.example.snowk.exercise;
  */
 
 public class Event {
-    String titleofevent;
-    int timeofeventstart;
-    int timeofeventstop;
+    private  String titleofevent;
+    private  int timeofeventstart;
+    private int timeofeventstop;
     public Event(String title, int timestart, int timestop){
           titleofevent=title;
          timeofeventstart = timestart;
