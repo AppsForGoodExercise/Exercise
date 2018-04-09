@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //notification code
-        button = (Button) findViewById (R.id.notiButton);
+        button = (Button) findViewById (R.id.notifyButton);
         button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view){
