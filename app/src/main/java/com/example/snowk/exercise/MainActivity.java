@@ -20,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String line = "";
+        ExerciseMasterList masterlists= new ExerciseMasterList();
         try {
             while ((line = reader.readLine()) != null) {
                 //Split line by ","
                 String[] fields = line.split(",");
                  Exercise exercise = new Exercise(fields[0], fields[1], Integer.parseInt(fields[2]),Integer.parseInt(fields[3]),Integer.parseInt(fields[4]));
+                 masterlists.addexercise(exercise);
             }
         }
         catch (IOException e){

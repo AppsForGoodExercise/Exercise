@@ -11,9 +11,14 @@ public class ExerciseMasterList {
 
     List<Exercise> masterlist;
     public ExerciseMasterList(){
-    Exercise e=null;
-    masterlist.add(e);
 
+   List<Exercise> Exercisemasterlist=masterlist;
+
+
+    }
+
+    public void addexercise (Exercise e){
+        masterlist.add(e);
 
     }
 
