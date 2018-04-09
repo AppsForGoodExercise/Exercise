@@ -1,6 +1,7 @@
 package com.example.snowk.exercise;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,10 +10,10 @@ import java.util.List;
 
 public class ExerciseMasterList {
 
-    List<Exercise> masterlist;
+    ArrayList<Exercise> masterlist;
     public ExerciseMasterList(){
 
-   List<Exercise> Exercisemasterlist=masterlist;
+    masterlist = new ArrayList<Exercise>();
 
 
     }
