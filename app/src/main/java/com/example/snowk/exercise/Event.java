@@ -26,5 +26,8 @@ public class Event {
     public int gettimeofeventstop(){
         return timeofeventstop;
     }
+    public int getlengthoftime(){
+        return timeofeventstop-timeofeventstart;
+    }
 
 }

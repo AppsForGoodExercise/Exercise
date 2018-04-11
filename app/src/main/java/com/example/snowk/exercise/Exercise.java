@@ -1,7 +1,7 @@
 package com.example.snowk.exercise;
 
 /**
- * Created by robertclark on 4/4/18.
+ * Created by robertclark on 4/4/18
  */
 
 public class Exercise {
