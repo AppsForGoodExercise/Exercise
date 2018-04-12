@@ -10,9 +10,9 @@ import java.util.List;
 public class Day {
     public List<Event> events;
     public int size = events.size();
-
-    public Day( String[] titlesoe, int[] starttimes, int[] stoptimes) {
-
+    public int date;
+    public Day( int date, String[] titlesoe, int[] starttimes, int[] stoptimes) {
+        date = date;
         events = new ArrayList<Event>();
         if(titlesoe.length==starttimes.length) {
             for(int p = 0;p<stoptimes.length;p++)
@@ -105,19 +105,13 @@ public class Day {
 
     }
 
-    /**
-     * Created by robertclark on 4/4/18.
-     */
-
-    public static class Exercise {
-
-
-
-        public Exercise(String title, String intensity, int calories){
-
-
-                //Read the data from the file
-
-        }
+    public int getDate(){
+        return date;
     }
-}
+
+    public int timebetweenevents(int j){
+        return (events.get(j+1).getstarttime()-events.get(j).gettimeofeventstop());
+    }
+
+    }
+

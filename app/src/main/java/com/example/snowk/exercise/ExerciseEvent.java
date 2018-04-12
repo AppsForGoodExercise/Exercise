@@ -10,7 +10,7 @@ import android.util.Log;
 public class ExerciseEvent {
 
     private String titleofexercise;
-   private int timeofexercisestart;
+    private int timeofexercisestart;
     private int timeofexercisestop;
     Exercise Eventexercise;
 
