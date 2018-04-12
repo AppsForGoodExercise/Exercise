@@ -47,15 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 notificationpopup();
             }
         });
-
     }
-
-
-
-    public void classclass(View v) {
-
-        }
-
 
     //code for connecting
     public void notificationpopup(){
