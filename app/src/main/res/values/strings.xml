@@ -7,4 +7,5 @@
     <string name="profileSTR">profile</string>
     <string name="recordsSTR">My Records</string>
     <string name="NotiSTR">notification</string>
+    <string name="notiButton">Notify Me</string>
 </resources>
