@@ -1,10 +1,14 @@
 package com.example.snowk.exercise;
 
+import java.util.ArrayList;
+
 /**
  * Created by robertclark on 3/28/18.
  */
 
 public class Week {
+
+    ArrayList<Event> listofevents = new ArrayList<Event>();
 
     public void dayconstructor(){
         Day day = new Day();
@@ -17,7 +21,6 @@ public class Week {
                     event = true;
 
                     listofevents.get(j).getlengthoftime();
-                    if(listofevents.get(j).gettimebetweenevents());
                 }
             }
         }

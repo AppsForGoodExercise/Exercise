@@ -11,6 +11,11 @@ public class Day {
     public List<Event> events;
     public int size = events.size();
     public int date;
+
+    public Day(){
+        date = 0;
+    }
+
     public Day( int date, String[] titlesoe, int[] starttimes, int[] stoptimes) {
         date = date;
         events = new ArrayList<Event>();

@@ -8,6 +8,7 @@ public class Event {
     private  String titleofevent;
     private  int timeofeventstart;
     private int timeofeventstop;
+
     public Event(String title, int timestart, int timestop){
           titleofevent=title;
          timeofeventstart = timestart;
@@ -20,7 +21,6 @@ public class Event {
 
     public int getstarttime(){
         return timeofeventstart;
-
     }
 
     public int gettimeofeventstop(){

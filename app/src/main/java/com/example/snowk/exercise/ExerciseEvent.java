@@ -21,9 +21,7 @@ public class ExerciseEvent {
 
     }
 
-    public String getTitleofExercise(){
-        return titleofexercise;
-        }
+    public String getTitleofExercise(){return titleofexercise; }
 
     public int getsexercisestarttime(){
         return timeofexercisestart;
