@@ -16,36 +16,12 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    //linking homepage to notification page
-public Button buttonExercise;
-
-public void notiButton(){
-    buttonExercise = (Button)findViewById(R.id.dateButton);
-    buttonExercise.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent noti = new Intent(MainActivity.this,notificationActivity.class);
-            startActivity(noti);
-
-        }
-    });
-
-}
-
-
     @Override
-
-    protected void onCreate(Bundle savedInstanceState) {
-
-
-
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
+        //Robert's Code
         InputStream is = (InputStream) getResources().openRawResource(R.raw.exerciselist);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
@@ -55,19 +31,24 @@ public void notiButton(){
             while ((line = reader.readLine()) != null) {
                 //Split line by ","
                 String[] fields = line.split(",");
-                 Exercise exercise = new Exercise(fields[0], fields[1], Integer.parseInt(fields[2]),Integer.parseInt(fields[3]),Integer.parseInt(fields[4]));
-                 masterlists.addexercise(exercise);
+                Exercise exercise = new Exercise(fields[0], fields[1], Integer.parseInt(fields[2]),Integer.parseInt(fields[3]),Integer.parseInt(fields[4]));
+                masterlists.addexercise(exercise);
             }
         }
         catch (IOException e){
             Log.e("MainActivity", "Error reading data from file on line " + line );
         }
+
+        //notification code
+        Button buttonExercise = findViewById(R.id.dateButton);
+        buttonExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notificationpopup();
+            }
+        });
+
     }
-
-
-
-
-
 
 
 
@@ -76,9 +57,16 @@ public void notiButton(){
         }
 
 
-    public void classclass2(View v) {
+    //code for connecting
+    public void notificationpopup(){
+        Intent noti = new Intent(this, notificationActivity.class);
+        startActivity(noti);
+    }
+
 
     }
 
-}
+
+
+
 
