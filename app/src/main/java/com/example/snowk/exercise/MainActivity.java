@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -39,14 +40,47 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Error reading data from file on line " + line );
         }
 
-        //notification code
-        Button buttonExercise = findViewById(R.id.dateButton);
+        //notification button
+        //this is disconnected for now
+        Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 notificationpopup();
             }
         });
+
+        //profile button
+       Button butprofile = findViewById(R.id.profileButton);
+       butprofile.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view){
+                profile();
+            }
+        });
+
+        //today's score button
+       Button scorebut = findViewById(R.id.scoreBut);
+       scorebut.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               todayscore();
+           }
+       });
+
+       //next exercise button
+       Button nextEx = findViewById(R.id.dateButton);
+       nextEx.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               nextExercise();
+           }
+       });
+
+        //Button scorebut = findViewById(R.id.scoreTitle);
+      //  scorebut.setOnClickListener(new View.OnClickListener())
+
     }
 
     //code for connecting
@@ -55,8 +89,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(noti);
     }
 
-
+    //connecting profile button
+    public void profile(){
+        Intent pro = new Intent(this, profile.class);
+        startActivity(pro);
     }
+
+    //next exercise
+    public void nextExercise (){
+        Intent exer = new Intent (this, nextExercise.class);
+        startActivity(exer);
+    }
+
+    public void todayscore (){
+        Intent tod = new Intent (this, todayScore.class);
+        startActivity(tod);
+    }
+}
 
 
 
