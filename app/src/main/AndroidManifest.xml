@@ -25,9 +25,11 @@
         <activity android:name=".sign_in" />
         <activity
             android:name=".api_quickstart"
-            android:label="Calender API">
-        </activity>
-        <activity android:name=".notificationActivity"/>
+            android:label="Calender API" />
+        <activity android:name=".notificationActivity" />
+        <activity android:name=".nextExercise" />
+        <activity android:name=".todayScore" />
+        <activity android:name=".profile"></activity>
     </application>
 
 </manifest>
