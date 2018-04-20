@@ -2,6 +2,7 @@ package com.example.snowk.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by robertclark on 3/28/18.
@@ -9,17 +10,22 @@ import java.util.List;
 
 public class Day {
     public List<Event> events;
-    public int size = events.size();
+    public int size;
     public int date;
+    public List<Exercise> masterlist;
 
-    public Day(){
-        date = 0;
-    }
 
-    public Day( int date, String[] titlesoe, int[] starttimes, int[] stoptimes) {
-        date = date;
+    public Day( int date, ArrayList<Event> listofevents,ExerciseMasterList listofexercisess) {
+
         events = new ArrayList<Event>();
-        if(titlesoe.length==starttimes.length) {
+        events = listofevents;
+        List<ExerciseEvent> daysexerices = new ArrayList<ExerciseEvent>();
+
+        List<fifteenminutezone> fifteens = new ArrayList<fifteenminutezone>();
+        Random randy = new Random();
+
+
+        /**if(titlesoe.length==starttimes.length) {
             for(int p = 0;p<stoptimes.length;p++)
                 for(int i=0;i<=titlesoe.length-1;i++) {
                     Event newevent = new Event(titlesoe[i],starttimes[p],stoptimes[i]);
@@ -28,13 +34,67 @@ public class Day {
                 }
         }
 
-    }
-    public boolean isEmpty() {
-        if(size==0) {
-            return true;
+        //Exercise Generator of list
+        List <Integer> timebetween = new ArrayList<Integer>();
+            if(listofevents.size()==0){
+                timebetween.add(1440);
+            }else if
+            for(int j = 0;j<listofevents.size()-1;j++){
+               timebetween.add(this.timebetweenevents(j));
+            }
+        Random randy = new Random(1);
+
+        for(int j = 0;j<timebetween.size();j++){
+            if(timebetween.get(j)<=15){
+                int x = randy.nextInt(masterlist.size());
+                ExerciseEvent eve = new ExerciseEvent(masterlist.get(x),1400,1400);
+                daysexerices.add(eve);
+
+            }
+            else if(timebetween.get(j)<=15){
+                int x = randy.nextInt(masterlist.size());
+                ExerciseEvent eve = new ExerciseEvent(masterlist.get(x),1400,1400);
+                daysexerices.add(eve);
+
+            }
+            else if(timebetween.get(j)<=15){
+                int x = randy.nextInt(masterlist.size());
+                ExerciseEvent eve = new ExerciseEvent(masterlist.get(x),1400,1400);
+                daysexerices.add(eve);
+
+            }
+            else if(timebetween.get(j)<=15){
+                int x = randy.nextInt(masterlist.size());
+                ExerciseEvent eve = new ExerciseEvent(masterlist.get(x),1400,1400);
+                daysexerices.add(eve);
+
+            }
+
+
+            if(timebetween.get(j)<=15){
+                int x = randy.nextInt(masterlist.size());
+                daysexerices.add(masterlist.get(x));
+
+            }
+        }**/
+
+        for(int p=0;p<=96;p++ ){
+            fifteenminutezone fifteener = new fifteenminutezone(p*15,false,false,null);
+            fifteens.add(fifteener);
         }
-        else return false;
+        int x = randy.nextInt(listofexercisess.getmasterlist().size());
+        int y = randy.nextInt(64);
+        for(int k = 0; k<=4;k++){
+             y = randy.nextInt(64);
+            if(fifteens.get(y).isthereanevent() || fifteens.get(y).isthereanexercisehere()){
+            fifteens.get(y).exercisepresent(true);
+            fifteens.get(y).exercisechange(masterlist.get(x));}
+        }
+
+
+
     }
+
 
 
     public Event geteventlocation(int location){
@@ -56,6 +116,12 @@ public class Day {
             return nevent;
     }
 
+
+
+
+
+
+
     public Event geteventstoptime(int timeofbeginning){
         boolean checker;
         Event nevent=null;
@@ -70,6 +136,13 @@ public class Day {
 
         return nevent;
     }
+
+
+
+
+
+
+
 
     public Event geteventtitle(String titleofevent){
         boolean checker;
@@ -115,7 +188,10 @@ public class Day {
     }
 
     public int timebetweenevents(int j){
-        return (events.get(j+1).getstarttime()-events.get(j).gettimeofeventstop());
+        if(events.size()!=0){
+
+       return  (events.get(j+1).getstarttime()-events.get(j).gettimeofeventstop());}
+       return 1440;
     }
 
     }

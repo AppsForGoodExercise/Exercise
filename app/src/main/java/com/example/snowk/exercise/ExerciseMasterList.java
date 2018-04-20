@@ -22,6 +22,10 @@ public class ExerciseMasterList {
         masterlist.add(e);
 
     }
+    public ArrayList getmasterlist (){
+        return masterlist;
+
+    }
 
 
 }

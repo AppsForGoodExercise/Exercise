@@ -11,7 +11,7 @@ public class Week {
     ArrayList<Event> listofevents = new ArrayList<Event>();
 
     public void dayconstructor(){
-        Day day = new Day();
+        //Day day = new Day();
         boolean event = false;
 
         int timebetweenevents;
