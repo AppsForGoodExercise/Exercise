@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //notification button
-        //this is disconnected for now
         Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,9 +77,6 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-        //Button scorebut = findViewById(R.id.scoreTitle);
-      //  scorebut.setOnClickListener(new View.OnClickListener())
-
     }
 
     //code for connecting
@@ -95,12 +91,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(pro);
     }
 
-    //next exercise
+    //connecting next exercise
     public void nextExercise (){
         Intent exer = new Intent (this, nextExercise.class);
         startActivity(exer);
     }
 
+    //connecting today's score
     public void todayscore (){
         Intent tod = new Intent (this, todayScore.class);
         startActivity(tod);
