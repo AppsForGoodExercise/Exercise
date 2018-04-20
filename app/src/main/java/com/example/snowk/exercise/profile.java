@@ -9,7 +9,7 @@ Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);  
+        setContentView(R.layout.activity_profile);
 
         button = (Button) findViewById(R.id.profileButton);
     }
