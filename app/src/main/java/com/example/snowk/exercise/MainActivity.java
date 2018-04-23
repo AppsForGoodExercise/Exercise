@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -108,8 +107,3 @@ public class MainActivity extends AppCompatActivity {
         startActivity(tod);
     }
 }
-
-
-
-//Hi everybody What is up
-
