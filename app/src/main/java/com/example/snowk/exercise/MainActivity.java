@@ -1,8 +1,8 @@
 package com.example.snowk.exercise;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,64 +48,68 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         //profile button
-       Button butprofile = findViewById(R.id.profileButton);
-       butprofile.setOnClickListener(new View.OnClickListener() {
+        Button butprofile = findViewById(R.id.profileButton);
+        butprofile.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 profile();
             }
         });
 
         //today's score button
-       Button scorebut = findViewById(R.id.scoreBut);
-       scorebut.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               todayscore();
-           }
-       });
+        Button scorebut = findViewById(R.id.scoreBut);
+        scorebut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                todayscore();
+            }
+        });
 
-       //next exercise button
-       Button nextEx = findViewById(R.id.dateButton);
-       nextEx.setOnClickListener(new View.OnClickListener() {
+        //next exercise button
+        Button nextEx = findViewById(R.id.dateButton);
+        nextEx.setOnClickListener(new View.OnClickListener() {
 
 
-           @Override
-           public void onClick(View view) {
-               nextExercise();
-           }
-       });}
+            @Override
+            public void onClick(View view) {
+                nextExercise();
+            }
+        });
 
-        //Button scorebut = findViewById(R.id.scoreTitle);
-      //  scorebut.setOnClickListener(new View.OnClickListener())
 
+
+    }
+
+    //Button scorebut = findViewById(R.id.scoreTitle);
+    //  scorebut.setOnClickListener(new View.OnClickListener())
 
 
     //code for connecting
-    public void notificationpopup(){
+    public void notificationpopup() {
         Intent noti = new Intent(this, notificationActivity.class);
         startActivity(noti);
     }
 
     //connecting profile button
-    public void profile(){
+    public void profile() {
         Intent pro = new Intent(this, profile.class);
         startActivity(pro);
     }
 
     //next exercise
-    public void nextExercise (){
-        Intent exer = new Intent (this, nextExercise.class);
+    public void nextExercise() {
+        Intent exer = new Intent(this, nextExercise.class);
         startActivity(exer);
     }
 
-    public void todayscore (){
-        Intent tod = new Intent (this, todayScore.class);
+    public void todayscore() {
+        Intent tod = new Intent(this, todayScore.class);
         startActivity(tod);
     }
+
+
 }
 
 
