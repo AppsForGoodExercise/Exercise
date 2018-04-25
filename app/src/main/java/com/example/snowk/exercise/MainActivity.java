@@ -154,8 +154,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(tod);
     }
 }
-
-
-
-//Hi everybody What is up
-
+//HOla
