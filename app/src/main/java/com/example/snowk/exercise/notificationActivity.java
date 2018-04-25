@@ -50,7 +50,7 @@ public class notificationActivity extends AppCompatActivity {
         Calendar c = (Calendar) Calendar.getInstance();
         c.add(Calendar.SECOND, 10);
 
-        Intent intent = new Intent("notificationActivity");
+        Intent intent = new Intent("notificationActivity"); //unsure
         PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), broadcast);
