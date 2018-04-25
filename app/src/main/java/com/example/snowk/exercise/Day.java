@@ -85,7 +85,7 @@ public class Day {
         int x = randy.nextInt(listofexercisess.getmasterlist().size());
         int y = randy.nextInt(64);
         for(int k = 0; k<=4;k++){
-             y = randy.nextInt(64);
+             y = randy.nextInt(38)+40;//NOTE THIS IS WEHRE WE CAN ADD AN ADJUSTMENT
             if(fifteens.get(y).isthereanevent() || fifteens.get(y).isthereanexercisehere()){
             fifteens.get(y).exercisepresent(true);
             fifteens.get(y).exercisechange(masterlist.get(x));}
@@ -160,7 +160,7 @@ public class Day {
     }
 
     public void addevent(String titleofevent,int starttime, int endtime){
-       Event addevent= new Event(titleofevent, starttime,endtime);
+       Event addevent= new Event(date, titleofevent, starttime,endtime);
        events.add(addevent);
     }
 

@@ -1,25 +1,30 @@
 package com.example.snowk.exercise;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
+import java.io.*;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
+import java.io.PrintWriter;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    public String path = Environment.getExternalStorageDirectory().getAbsolutePath()+"week.csv";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         //Robert's Code
         InputStream is = (InputStream) getResources().openRawResource(R.raw.exerciselist);
@@ -28,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         String line = "";
         ExerciseMasterList masterlists = new ExerciseMasterList();
         try {
+            File file = new File("week.csv");
+            FileWriter fw = new FileWriter(file);
+            PrintWriter pw = new PrintWriter(fw);
+
+            pw.println("Line 1");
+            pw.println("Line 3");
+
+            pw.close();
             while ((line = reader.readLine()) != null) {
                 //Split line by ","
                 String[] fields = line.split(",");
@@ -38,6 +51,30 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Error reading data from file on line " + line);
         }
 
+
+
+
+
+
+
+
+
+
+        InputStream is2 = (InputStream) getResources().openRawResource(R.raw.week);
+        BufferedReader reader2 = new BufferedReader(new InputStreamReader(is));
+
+        String line2 = "";
+        int newdate;
+        try {
+            while ((line = reader.readLine()) != null) {
+                //Split line by ","
+                String[] fields = line.split(",");
+                Exercise exercise = new Exercise(fields[0], fields[1], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), Integer.parseInt(fields[4]));
+                masterlists.addexercise(exercise);
+            }
+        } catch (IOException e) {
+            Log.e("MainActivity", "Error reading data from file on line " + line);
+        }
         //notification button
         //this is disconnected for now
         Button buttonExercise = findViewById(R.id.notify);
@@ -78,7 +115,16 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View view) {
                nextExercise();
            }
-       });}
+       });
+
+
+
+
+
+
+
+
+    }
 
         //Button scorebut = findViewById(R.id.scoreTitle);
       //  scorebut.setOnClickListener(new View.OnClickListener())

@@ -8,12 +8,15 @@ public class Event {
     private  String titleofevent;
     private  int timeofeventstart;
     private int timeofeventstop;
+    private int eventdate;
 
-    public Event(String title, int timestart, int timestop){
-          titleofevent=title;
+    public Event(int date, String title, int timestart, int timestop){
+         titleofevent=title;
          timeofeventstart = timestart;
          timeofeventstop = timestop;
+         eventdate = date;
     }
+
 
     public String getTitleofEvent(){
         return titleofevent;
