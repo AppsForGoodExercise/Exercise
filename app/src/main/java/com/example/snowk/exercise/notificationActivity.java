@@ -1,9 +1,7 @@
 package com.example.snowk.exercise;
-
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -50,10 +48,11 @@ public class notificationActivity extends AppCompatActivity {
         Calendar c = (Calendar) Calendar.getInstance();
         c.add(Calendar.SECOND, 10);
 
-        Intent intent = new Intent("notificationActivity"); //unsure
-        PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent = new Intent("notifyButton"); //unsure
+        PendingIntent broadcast = PendingIntent.getBroadcast(this,100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
-        alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), broadcast);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),broadcast);
+
 
     }
 
