@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Calendar c = (Calendar) Calendar.getInstance();
-        c.add(Calendar.SECOND, 5);
+        c.add(Calendar.SECOND, 10);
         startAlarm(c);
     }
 
