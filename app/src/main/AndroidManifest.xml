@@ -30,6 +30,8 @@
         <activity android:name=".nextExercise" />
         <activity android:name=".todayScore" />
         <activity android:name=".profile"></activity>
+
+        <receiver android:name=".AlarmReceiver" />
     </application>
 
 </manifest>
