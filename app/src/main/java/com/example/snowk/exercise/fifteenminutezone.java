@@ -30,6 +30,12 @@ public class fifteenminutezone {
     public boolean isthereanevent(){
         return  isthereaneventhere;
     }
+    public int gettimestart(){
+        return timeofbeginning;
+    }
+    public Exercise getExercise(){
+        return  exerewise;
+    }
 
     public void exercisechange(Exercise r){
         exerewise  = r;
