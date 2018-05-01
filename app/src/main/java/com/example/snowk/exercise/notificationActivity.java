@@ -25,16 +25,20 @@ public class notificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification);
 
-        button = (Button) findViewById(R.id.notifyButton);}
+        button = (Button) findViewById(R.id.notifyButton);
 
-     /* button.setOnClickListener(new View.OnClickListener() {
+
+        button.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
             public void onClick(View view) {
 
-                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(notificationActivity.this)
+
+               NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(notificationActivity.this)
                         .setSmallIcon(android.R.drawable.stat_notify_error)
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
-                        .setVibrate(new long[] {Notification.DEFAULT_VIBRATE})
+                        .setVibrate(new long[]{Notification.DEFAULT_VIBRATE})
                         .setPriority(Notification.PRIORITY_MAX)
                         .setContentTitle("ExerT!me")
                         .setContentText("Time to exercise!");
@@ -43,30 +47,16 @@ public class notificationActivity extends AppCompatActivity {
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(notificationActivity.this);
                 notificationManager.notify(1, notificationBuilder.build());
 
+
             }
         });
-    */
+    }
+}
 
-            //code for popup--> https://www.youtube.com/watch?v=-mW45toHZpg
 
-            public void headsup(View view) {
-                Intent intent = new Intent(notificationActivity.this, MainActivity.class);
-                PendingIntent pi = PendingIntent.getActivity(notificationActivity.this, 0,intent, 0);
 
-                Notification.Builder builder = new Notification.Builder(this);
 
-                builder.setContentTitle("ExerT!me")
-                        .setContentText("Time to exercise")
-                        .setSmallIcon(R.mipmap.ic_launcher)
-                        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
-                        .setContentIntent(pi)
-                        .setVibrate(new long[]{Notification.DEFAULT_VIBRATE})
-                        .setPriority(Notification.PRIORITY_MAX);
 
-               NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                notificationManager.notify(0, builder.build());
-
-            }}
 
 
 
