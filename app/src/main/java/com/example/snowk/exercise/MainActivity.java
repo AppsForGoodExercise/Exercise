@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         String p = calendar.get(Calendar.DAY_OF_MONTH)+""+calendar.get(Calendar.MONTH)+""+calendar.get(Calendar.YEAR);
         int y = calendar.get(Calendar.MINUTE);
         int numberday = Integer.parseInt(p);
-        //Robert's Code
+        
         InputStream is = (InputStream) getResources().openRawResource(R.raw.exerciselist);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
@@ -76,13 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
         InputStream is2 = (InputStream) getResources().openRawResource(R.raw.week);
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(is));
 
@@ -103,13 +96,9 @@ public class MainActivity extends AppCompatActivity {
          day = new Day(numberday, null, masterlists);
 
 
-
-
-
-
         //notification button
         //this is disconnected for now
-        Button buttonExercise = findViewById(R.id.notify);
+        //Button buttonExercise = findViewById(R.id.notify);
         //notification button--this is disconnected for now
        /* Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
@@ -157,18 +146,6 @@ public class MainActivity extends AppCompatActivity {
         startAlarm(c);
     }
 
-
-
-
-
-
-
-
-
-
-
-    //Button scorebut = findViewById(R.id.scoreTitle);
-    //  scorebut.setOnClickListener(new View.OnClickListener())
 
 
     //code for connecting
@@ -224,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Rahul's alarmManager code
+    //alarmManager code
 
     public void startAlarm(Calendar c){
 
