@@ -41,16 +41,15 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Error reading data from file on line " + line);
         }
 
-        //notification button
-        //this is disconnected for now
-        Button buttonExercise = findViewById(R.id.notify);
+        //notification button--this is disconnected for now
+       /* Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 notificationpopup();
             }
         });
-
+*/
 
         //profile button
         Button butprofile = findViewById(R.id.profileButton);
@@ -97,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public void notificationpopup() {
         Intent noti = new Intent(this, notificationActivity.class);
         startActivity(noti);
+
     }
 
     //connecting profile button
