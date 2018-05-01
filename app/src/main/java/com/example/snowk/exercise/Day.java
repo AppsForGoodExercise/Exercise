@@ -13,7 +13,12 @@ public class Day {
     public int size;
     public int date;
     public List<Exercise> masterlist;
+    public List<fifteenminutezone> fifteens = new ArrayList<fifteenminutezone>();
 
+
+    public Day(){
+
+    }
 
     public Day( int date, ArrayList<Event> listofevents,ExerciseMasterList listofexercisess) {
 
@@ -21,7 +26,6 @@ public class Day {
         events = listofevents;
         List<ExerciseEvent> daysexerices = new ArrayList<ExerciseEvent>();
 
-        List<fifteenminutezone> fifteens = new ArrayList<fifteenminutezone>();
         Random randy = new Random();
 
 
@@ -78,19 +82,20 @@ public class Day {
             }
         }**/
 
-        for(int p=0;p<=96;p++ ){
-            fifteenminutezone fifteener = new fifteenminutezone(p*15,false,false,null);
-            fifteens.add(fifteener);
-        }
-        int x = randy.nextInt(listofexercisess.getmasterlist().size());
-        int y = randy.nextInt(64);
-        for(int k = 0; k<=4;k++){
-             y = randy.nextInt(38)+40;//NOTE THIS IS WEHRE WE CAN ADD AN ADJUSTMENT
-            if(fifteens.get(y).isthereanevent() || fifteens.get(y).isthereanexercisehere()){
-            fifteens.get(y).exercisepresent(true);
-            fifteens.get(y).exercisechange(masterlist.get(x));}
-        }
+            for (int p = 0; p <= 96; p++) {
+                fifteenminutezone fifteener = new fifteenminutezone(p * 15, false, false, null);
+                fifteens.add(fifteener);
+            }
+            int x = randy.nextInt(listofexercisess.getmasterlist().size());
+            int y = randy.nextInt(64);
+            for (int k = 0; k <= 4; k++) {
+                y = randy.nextInt(38) + 40;//NOTE THIS IS WEHRE WE CAN ADD AN ADJUSTMENT
+                if (fifteens.get(y).isthereanevent() || fifteens.get(y).isthereanexercisehere()) {
+                    fifteens.get(y).exercisepresent(true);
+                    fifteens.get(y).exercisechange(masterlist.get(x));
+                }
 
+        }
 
 
     }
@@ -137,7 +142,21 @@ public class Day {
         return nevent;
     }
 
+    public String getnextexercise(int time){
 
+        for(int i=time; i<1440; i++) {
+            for(int x = 0; x<fifteens.size();x++){
+                if(i%15==0){
+                    if(fifteens.get(x).isthereanexercisehere()){
+                        return fifteens.get(x).getExercise().getname();
+                    }
+                }
+        }
+
+        }
+        return "None";
+
+    }
 
 
 

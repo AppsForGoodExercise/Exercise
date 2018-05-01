@@ -20,4 +20,11 @@ public class Exercise {
 
     }
 
+
+    public String getname(){
+        return title;
+
+
+    }
+
 }
