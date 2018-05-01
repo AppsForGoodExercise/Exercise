@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Date c = Calendar.getInstance().getTime();
-        System.out.println("Current time => " + c);
+        Date g = Calendar.getInstance().getTime();
+        System.out.println("Current time => " + g);
 
         Date date = new Date();   // given date
         Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+
 
     //Button scorebut = findViewById(R.id.scoreTitle);
     //  scorebut.setOnClickListener(new View.OnClickListener())
