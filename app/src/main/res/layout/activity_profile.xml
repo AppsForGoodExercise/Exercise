@@ -9,14 +9,14 @@
     <TextView
         android:id="@+id/profileTitle"
         android:layout_width="145dp"
-        android:layout_height="68dp"
+        android:layout_height="69dp"
         android:layout_marginEnd="228dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/protext"
+        android:layout_marginRight="228dp"
+        android:layout_marginTop="111dp"
+        android:text="My Profile"
         android:textIsSelectable="false"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="228dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

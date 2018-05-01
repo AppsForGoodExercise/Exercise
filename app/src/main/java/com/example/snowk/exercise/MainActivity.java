@@ -1,15 +1,20 @@
 package com.example.snowk.exercise;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import java.io.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
@@ -21,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -104,44 +110,53 @@ public class MainActivity extends AppCompatActivity {
         //notification button
         //this is disconnected for now
         Button buttonExercise = findViewById(R.id.notify);
+        //notification button--this is disconnected for now
+       /* Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 notificationpopup();
             }
         });
-
-
+*/
 
         //profile button
-       Button butprofile = findViewById(R.id.profileButton);
-       butprofile.setOnClickListener(new View.OnClickListener() {
+        Button butprofile = findViewById(R.id.profileButton);
+        butprofile.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 profile();
             }
         });
 
         //today's score button
-       Button scorebut = findViewById(R.id.scoreBut);
-       scorebut.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               todayscore();
-           }
-       });
+        Button scorebut = findViewById(R.id.scoreBut);
+        scorebut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                todayscore();
+            }
+        });
 
-       //next exercise button
-       Button nextEx = findViewById(R.id.dateButton);
-       nextEx.setOnClickListener(new View.OnClickListener() {
+        //next exercise button
+        Button nextEx = findViewById(R.id.dateButton);
+        nextEx.setOnClickListener(new View.OnClickListener() {
 
 
-           @Override
-           public void onClick(View view) {
-               nextExercise();
-           }
-       });
+            @Override
+            public void onClick(View view) {
+                nextExercise();
+            }
+        });
+
+
+
+        Calendar c = (Calendar) Calendar.getInstance();
+        c.add(Calendar.SECOND, 10);
+        startAlarm(c);
+    }
+
 
 
 
@@ -152,31 +167,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-        //Button scorebut = findViewById(R.id.scoreTitle);
-      //  scorebut.setOnClickListener(new View.OnClickListener())
-
+    //Button scorebut = findViewById(R.id.scoreTitle);
+    //  scorebut.setOnClickListener(new View.OnClickListener())
 
 
     //code for connecting
-    public void notificationpopup(){
+    public void notificationpopup() {
         Intent noti = new Intent(this, notificationActivity.class);
         startActivity(noti);
+
     }
 
     //connecting profile button
-    public void profile(){
+    public void profile() {
         Intent pro = new Intent(this, profile.class);
         startActivity(pro);
     }
 
     //next exercise
-    public void nextExercise (){
-        Intent exer = new Intent (this, nextExercise.class);
+    public void nextExercise() {
+        Intent exer = new Intent(this, nextExercise.class);
         startActivity(exer);
     }
 
-    public void todayscore (){
-        Intent tod = new Intent (this, todayScore.class);
+    public void todayscore() {
+        Intent tod = new Intent(this, todayScore.class);
         startActivity(tod);
     }
 
@@ -208,5 +223,17 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
     }
+
+    //Rahul's alarmManager code
+
+    public void startAlarm(Calendar c){
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent intent = new Intent(this, AlarmReceiver.class);
+        PendingIntent broadcast = PendingIntent.getBroadcast(this,1,intent,0);
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),broadcast);
+    }
+
 }
-//HOla
