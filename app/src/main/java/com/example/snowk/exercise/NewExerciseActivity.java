@@ -23,9 +23,9 @@ public class NewExerciseActivity extends AppCompatActivity
         //Get the Intent that started this activity and extract the data
         Bundle bundle = getIntent().getExtras();
 
-        String ans = bundle.getString("Hi");
 
+        String ans = bundle.getString("answer");
         TextView upcoingtet = findViewById(R.id.upcomingexercise);
-         upcoingtet.setText("Hi");
+         upcoingtet.setText(ans);
     }
 }
