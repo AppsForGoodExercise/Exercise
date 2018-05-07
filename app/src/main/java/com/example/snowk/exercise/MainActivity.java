@@ -170,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
         Intent exer = new Intent(this, nextExercise.class);
         Log.e("MainActivity", "hi " );
 
-        System.out.println("HEYYEAG");
         Date date = new Date();   // given date
         Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
         calendar.setTime(date);   // assigns calendar to given date
