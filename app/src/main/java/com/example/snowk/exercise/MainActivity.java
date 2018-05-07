@@ -55,17 +55,22 @@ public class MainActivity extends AppCompatActivity {
 
         String line = "";
         ExerciseMasterList masterlists = new ExerciseMasterList();
+
+
+
+
+
+
+
+
+
+
+
+
         try {
-            File file = new File("week.csv");
-            FileWriter fw = new FileWriter(file);
-            PrintWriter pw = new PrintWriter(fw);
-
-            pw.println("Line 1");
-            pw.println("Line 3");
-
-            pw.close();
             while ((line = reader.readLine()) != null) {
                 //Split line by ","
+
                 String[] fields = line.split(",");
                 Exercise exercise = new Exercise(fields[0], fields[1], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), Integer.parseInt(fields[4]));
                 masterlists.addexercise(exercise);
@@ -73,32 +78,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("MainActivity", "Error reading data from file on line " + line);
         }
-
-
-
-
-
-
-
-
-
-
-        InputStream is2 = (InputStream) getResources().openRawResource(R.raw.week);
-        BufferedReader reader2 = new BufferedReader(new InputStreamReader(is));
-
-        String line2 = "";
-        int newdate;
-        try {
-            while ((line = reader.readLine()) != null) {
-                //Split line by ","
-                String[] fields = line.split(",");
-                Exercise exercise = new Exercise(fields[0], fields[1], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), Integer.parseInt(fields[4]));
-                masterlists.addexercise(exercise);
-            }
-        } catch (IOException e) {
-            Log.e("MainActivity", "Error reading data from file on line " + line);
+        for (int r =0; r<masterlists.getmasterlist().size();r++){
+            System.out.println(masterlists.getexercixe(r).getname());
         }
-
 
          day = new Day(numberday, null, masterlists);
 
@@ -109,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         //notification button
         //this is disconnected for now
-        Button buttonExercise = findViewById(R.id.notify);
+       // Button buttonExercise = findViewById(R.id.notify);
         //notification button--this is disconnected for now
        /* Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
@@ -182,12 +164,34 @@ public class MainActivity extends AppCompatActivity {
     public void profile() {
         Intent pro = new Intent(this, profile.class);
         startActivity(pro);
+
     }
 
     //next exercise
     public void nextExercise() {
         Intent exer = new Intent(this, nextExercise.class);
+        Log.e("MainActivity", "hi " );
+
+        System.out.println("HEYYEAG");
+        Date date = new Date();   // given date
+        Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
+        calendar.setTime(date);   // assigns calendar to given date
+        int x = calendar.get(Calendar.HOUR_OF_DAY); // gets hour in 24h format
+        calendar.get(Calendar.HOUR);        // gets hour in 12h format
+        calendar.get(Calendar.MONTH);
+        int y = calendar.get(Calendar.MINUTE);
+
+        int time = x*60+y;
+
+        String  answer = ""+day.getalltheexercises()+"";
+
+
+        exer.putExtra("NameofExercise", answer);
+
+
+
         startActivity(exer);
+
     }
 
     public void todayscore() {
@@ -214,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
         int time = x*60+y;
 
-           String  answer = ""+day.getnextexercise(time)+"";
+           String  answer = ""+day.getalltheexercises()+"";
 
 
             Intent intent = new Intent(this, NewExerciseActivity.class);

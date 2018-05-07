@@ -86,13 +86,18 @@ public class Day {
                 fifteenminutezone fifteener = new fifteenminutezone(p * 15, false, false, null);
                 fifteens.add(fifteener);
             }
+
             int x = randy.nextInt(listofexercisess.getmasterlist().size());
             int y = randy.nextInt(64);
+            fifteenminutezone teen;
             for (int k = 0; k <= 4; k++) {
                 y = randy.nextInt(38) + 40;//NOTE THIS IS WEHRE WE CAN ADD AN ADJUSTMENT
-                if (fifteens.get(y).isthereanevent() || fifteens.get(y).isthereanexercisehere()) {
+                System.out.println("Exercise set");
+                if (!fifteens.get(y).isthereanevent() || !fifteens.get(y).isthereanexercisehere()) {
+                    System.out.println("Setting an exercise");
                     fifteens.get(y).exercisepresent(true);
-                    fifteens.get(y).exercisechange(masterlist.get(x));
+                    teen = fifteens.get(y);
+                    teen.setexercise(listofexercisess.getexercixe(x));
                 }
 
         }
@@ -141,22 +146,35 @@ public class Day {
 
         return nevent;
     }
+    public String getalltheexercises(){
+        String list="";
+        for(int p =0; p<96;p++){
+            if(fifteens.get(p).isthereanexercisehere()){
+System.out.println("Hi");
+                list = list+""+fifteens.get(p).getExercise().getname();
+            }
 
-    public String getnextexercise(int time){
-
-        for(int i=time; i<1440; i++) {
-            for(int x = 0; x<fifteens.size();x++){
-                if(i%15==0){
-                    if(fifteens.get(x).isthereanexercisehere()){
-                        return fifteens.get(x).getExercise().getname();
-                    }
-                }
-        }
-
-        }
-        return "None";
-
+        }return list;
     }
+    public String getnextexercise(int time) {
+        System.out.println("Getting the next Exercise");
+
+        for (int i = 0; i < 360; i++) {
+            for (int x = 0; x < fifteens.size(); x++) {
+                if (i % 15 == 0) {
+                    if (fifteens.get(x).isthereanexercisehere()) {
+                        System.out.println("I am working");
+                        return fifteens.get(x).getExercise().getname();
+
+                    } else return "None";
+                }
+            }
+
+        }
+         return "None";
+    }
+
+
 
 
 
