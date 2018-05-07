@@ -17,4 +17,8 @@
     <string name="scoretitle">Today\'s Score</string>
     <string name="notification">Notification</string>
     <string name="scoretext">My Score</string>
+    <string name="nameTi">Name</string>
+    <string name="name">Name</string>
+    <string name="scehduleButton">Generate Schedule</string>
+    <string name="goalTitle">Goal</string>
 </resources>

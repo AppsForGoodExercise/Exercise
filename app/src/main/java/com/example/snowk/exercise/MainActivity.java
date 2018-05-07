@@ -68,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
+            File file = new File("week.csv");
+            FileWriter fw = new FileWriter(file);
+            PrintWriter pw = new PrintWriter(fw);
+
+            pw.println("Line 1");
+            pw.println("Line 3");
+
+            pw.close();
             while ((line = reader.readLine()) != null) {
                 //Split line by ","
 
@@ -82,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(masterlists.getexercixe(r).getname());
         }
 
+
          day = new Day(numberday, null, masterlists);
 
 
@@ -92,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         //notification button
         //this is disconnected for now
        // Button buttonExercise = findViewById(R.id.notify);
+        //Button buttonExercise = findViewById(R.id.notify);
         //notification button--this is disconnected for now
        /* Button buttonExercise = findViewById(R.id.notify);
         buttonExercise.setOnClickListener(new View.OnClickListener() {
@@ -135,22 +145,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         Calendar c = (Calendar) Calendar.getInstance();
-        c.add(Calendar.SECOND, 10);
+        c.add(Calendar.SECOND, 5);
         startAlarm(c);
     }
 
-
-
-
-
-
-
-
-
-
-
-    //Button scorebut = findViewById(R.id.scoreTitle);
-    //  scorebut.setOnClickListener(new View.OnClickListener())
 
 
     //code for connecting
@@ -228,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Rahul's alarmManager code
+    //alarmManager code
 
     public void startAlarm(Calendar c){
 
