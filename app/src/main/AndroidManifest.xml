@@ -31,6 +31,7 @@
         <activity android:name=".nextExercise" />
         <activity android:name=".todayScore" />
         <activity android:name=".profile"></activity>
+        <activity android:name=".exercisecompleteList"></activity>
 
         <receiver android:name=".AlarmReceiver" />
     </application>
